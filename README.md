@@ -4,6 +4,8 @@ Implementation of the Kernel k-means clustering algorithm for multiple dimension
 
 https://sites.google.com/site/dataclusteringalgorithms/kernel-k-means-clustering-algorithm
 
+The related bachelor thesis can be found here: https://www.overleaf.com/read/shnzrthjgqtw (read only)
+
 ## Requirements
 
 Package requirements are handled using pip. To install them run the following command from the repositories root folder.
