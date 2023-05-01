@@ -15,3 +15,7 @@ Package requirements are handled using pip. To install them run the following co
 ## Test
 
 Testing is set up using pytest. Run your tests running the command `pytest` in the root directory.
+
+## Examples
+
+Run `python examples/plot_kkmeans.py` or `python examples/metrics_benchmark.py` to see the algorithm in action.
