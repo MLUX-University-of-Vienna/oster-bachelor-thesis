@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs, make_circles
 from sklearn.decomposition import PCA
 
-from kkmeans import kkmeans
+from kkmeans import kkmeans, rbf_kernel
 
 FONT_SIZE = 8
 
@@ -41,8 +41,10 @@ def plot_1D_scatter(axs):
 
 
 def plot_non_linear_separable(axs):
-    X, _ = make_circles(n_samples=300, noise=0.05)
-    cluster_assignments = kkmeans(X, n_clusters=2)
+    X, _ = make_circles(n_samples=1_000, factor=0.1,
+                        noise=0.05, random_state=0)
+    cluster_assignments = kkmeans(
+        X, n_clusters=2, kernel_function=lambda X: rbf_kernel(X, sigma=0.4))
 
     axs.scatter(X[:, 0], X[:, 1], c=cluster_assignments,
                 cmap='viridis', marker='o')
