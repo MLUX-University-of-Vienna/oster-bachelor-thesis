@@ -6,16 +6,17 @@ https://sites.google.com/site/dataclusteringalgorithms/kernel-k-means-clustering
 
 The related bachelor thesis can be found here: https://www.overleaf.com/read/shnzrthjgqtw (read only)
 
-## Requirements
+## Local Development
 
-Package requirements are handled using pip. To install them run the following command from the repositories root folder.
-
-`pip install -r requirements.txt`
+- (optional) Create a venv `python3 -m venv .venv`
+- (optional) Active venv `source .venv/bin/activate`
+- (optional) Update pip `pip install --upgrade pip`
+- Install all required packages `pip install -r requirements.txt`
 
 ## Test
 
-Testing is set up using pytest. Run your tests running the command `pytest` in the root directory.
+Testing is set up using `pytest`. Run all tests running the command `pytest` in the root directory. For detailed description on pytest see: [Full pytest documentation](https://pytest.org/en/7.3.x/contents.html)
 
 ## Examples
 
-Run `python examples/plot_kkmeans.py` or `python examples/metrics_benchmark.py` to see the algorithm in action.
+Take a look at the examples folder to see benchmarking and plotted examples of the algorithm in action. You can run them simply with `python examples/{name of the file}.py`
