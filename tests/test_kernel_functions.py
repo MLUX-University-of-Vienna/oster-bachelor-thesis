@@ -55,7 +55,7 @@ def test_rbf_kernel_against_sklearn():
 
     X, _ = datasets.make_blobs(n_samples=1000, centers=5, n_features=10)
 
-    K = rbf_kernel(X)
+    K = rbf_kernel(X, sigma)
     K_sklearn = rbf_kernel_sklearn(X, gamma=gamma)
 
     assert np.allclose(K, K_sklearn), "Kernel matrix is not equal to sklearn's"
