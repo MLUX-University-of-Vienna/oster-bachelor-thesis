@@ -20,18 +20,20 @@ def sum_of_variances(X, labels):
 
 
 def benchmark(n_samples, n_features):
+    n_clusters = 5
+
     X, _ = datasets.make_blobs(
-        n_samples=n_samples, centers=5, n_features=n_features)
+        n_samples=n_samples, centers=n_clusters, n_features=n_features)
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
     algorithms = [
-        ('K-means', KMeans(n_clusters=5, n_init=10)),
-        ('DBSCAN', DBSCAN(eps=0.5, min_samples=5)),
-        ('Agglomerative', AgglomerativeClustering(n_clusters=5)),
-        ('Spectral', SpectralClustering(n_clusters=5)),
-        ('GMM', GaussianMixture(n_components=5)),
-        ('Kernel K-means', kkmeans(X_scaled, n_clusters=5))
+        ('K-means', KMeans(n_clusters=n_clusters, n_init=10)),
+        ('DBSCAN', DBSCAN(eps=0.5, min_samples=n_clusters)),
+        ('Agglomerative', AgglomerativeClustering(n_clusters=n_clusters)),
+        ('Spectral', SpectralClustering(n_clusters=n_clusters)),
+        ('GMM', GaussianMixture(n_components=n_clusters)),
+        ('Kernel K-means', kkmeans(X_scaled, n_clusters=n_clusters))
     ]
 
     metrics = {}
@@ -81,7 +83,8 @@ def benchmark(n_samples, n_features):
     print("\n")
 
 
-for n_samples in [100, 1000, 10000]:
-    for n_features in [2, 10, 100]:
-        print(f"n_samples={n_samples}, n_features={n_features}")
-        benchmark(n_samples, n_features)
+if __name__ == "__main__":
+    for n_samples in [100, 1000, 10000]:
+        for n_features in [2, 10, 100, 200]:
+            print(f"n_samples={n_samples}, n_features={n_features}")
+            benchmark(n_samples, n_features)
