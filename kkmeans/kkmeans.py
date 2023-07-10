@@ -15,7 +15,7 @@ def kkmeans(
     Performs kernel k-means clustering on a given data set X.
 
     Parameters:
-        X (ndarray): input data matrix of shape (n_samples, n_features).
+        X (ndarray): input data tensor of shape (n_samples, n_features).
         n_clusters (int): number of clusters to form.
         kernel_function (callable, optional): kernel function to use (default=rbf_kernel).
         rand_cluster_assignment (callable, optional): function to generate initial cluster assignments (default=rand_cluster_assignment).
