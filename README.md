@@ -20,3 +20,7 @@ Testing is set up using `pytest`. Run all tests running the command `pytest` in 
 ## Examples
 
 Take a look at the examples folder to see benchmarking and plotted examples of the algorithm in action. The playground notebook should give you a comprehensive overview of the evaluation of the algorithm. It can be run after [installing jupyter](https://jupyter-org.translate.goog/install?_x_tr_sl=en&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=sc) and running `jupyter notebook` from this folder.
+
+## Installation
+
+The package can be installed directly from this repository using `pip install git+ssh://git@git01lab.cs.univie.ac.at/osterj97/oster-bachelor-thesis.git`.

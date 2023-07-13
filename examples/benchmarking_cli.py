@@ -163,17 +163,23 @@ def run_benchmarking(config):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Benchmarking tool for custom kkmeans algorithm.",
+
+    parser = argparse.ArgumentParser(description="Benchmarking tool for custom kkmeans algorithm. It will generate an intermediate .pickle file at each iteration storing the resuls.",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument("-n", "--n_samples", type=str,
-                        default="50, 100, 500")
-    parser.add_argument("-c", "--n_clusters", type=int, default=5)
-    parser.add_argument("-f", "--n_features", type=str, default="3")
+    mode_explanation = "Either n_samples or n_features must be a single value. This restriction is enforced because the script is designed to benchmark how well the algorithms perform when the dimensionality or the sample size of the data is varied. For instance, you might set n_samples to be 50,100,500 and n_features to be a single value 2. Alternatively, you could set n_samples to be a single value, like 100, and n_features to be 2,4,6,8."
 
-    parser.add_argument("--file", type=str,
-                        default="benchmarking_results.pickle")
-    parser.add_argument("-i", "--iter", type=int, default=10)
+    parser.add_argument("-n", "--n_samples", type=str,
+                        default="50, 100, 500", help=f"A list of commaseparated values for n_samples. In case only one value is provided, it will be used for all runs. {mode_explanation}")
+    parser.add_argument("-c", "--n_clusters", type=int, default=5,
+                        help="Number of clusters. This is only applicable if n_samples is a single value and n_features is a list of values.")
+    parser.add_argument("-f", "--n_features", type=str, default="3",
+                        help=f"A list of commaseparated values for n_features. In case only one value is provided, it will be used for all runs. {mode_explanation}")
+
+    parser.add_argument("--file", type=str, default="",
+                        help="In case you have previous benchmarking runs and want to merge them with new runs, this file will be used to load existing results.")
+    parser.add_argument("-i", "--iter", type=int, default=10,
+                        help="Number of iterations per run.")
 
     args = parser.parse_args()
 
