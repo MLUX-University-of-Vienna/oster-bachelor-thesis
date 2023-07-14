@@ -20,7 +20,8 @@ def rbf_kernel(X, sigma=None):
     sqdist = np.sum((X[:, np.newaxis] - X) ** 2, axis=-1)
 
     if sigma is None:
-        sigma = np.sqrt(np.median((sqdist))) or 1.0
+        sigma = np.sqrt(np.median((sqdist)))
+        sigma = max(sigma, 1e-10)  # ensure sigma is not 0
     elif sigma <= 0:
         raise ValueError("sigma must be a positive number.")
 
