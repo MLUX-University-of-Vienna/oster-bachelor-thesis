@@ -41,10 +41,7 @@ def kmeans_plusplus(X, n_clusters):
         cumulative_probs = np.cumsum(probs)
         r = np.random.rand()
 
-        for j, p in enumerate(cumulative_probs):
-            if r < p:
-                i = j
-                break
+        i = next(j for j, p in enumerate(cumulative_probs) if r < p)
 
         centroids.append(X[i])
 
