@@ -4,7 +4,7 @@ Implementation of the Kernel k-means clustering algorithm for multiple dimension
 
 https://sites.google.com/site/dataclusteringalgorithms/kernel-k-means-clustering-algorithm
 
-The related bachelor thesis can be found here: https://www.overleaf.com/read/shnzrthjgqtw (read only)
+The related bachelor thesis can be found here: https://www.overleaf.com/read/shnzrthjgqtw (read only) or as an exported .pdf here [Bachelor_Thesis\_\_\_\_Kernel_k_means_clustering_framework_in_Python.pdf](./Bachelor_Thesis____Kernel_k_means_clustering_framework_in_Python.pdf)
 
 ## Local Development
 
