@@ -8,6 +8,8 @@ The related bachelor thesis can be found here: https://www.overleaf.com/read/shn
 
 ## Local Development
 
+The following commands assume you run on a Linux or Mac, for Windows instructions take a look at the official [documentations](https://docs.python.org/3/library/venv.html).
+
 - (optional) Create a venv `python3 -m venv .venv`
 - (optional) Active venv `source .venv/bin/activate`
 - (optional) Update pip `pip install --upgrade pip`
