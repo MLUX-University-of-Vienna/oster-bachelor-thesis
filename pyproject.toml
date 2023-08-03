@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py-kkmeans"
+name = "python-kkmeans"
 version = "0.1.0"
 authors = [{name = "Johannes Oster"}]
 description = "An implementation of the Kernel k-means algorithm for a bachelorthesis."

@@ -1,5 +1,7 @@
 # kkmeans
 
+_Repository: [https://git01lab.cs.univie.ac.at/osterj97/oster-bachelor-thesis](https://git01lab.cs.univie.ac.at/osterj97/oster-bachelor-thesis)_
+
 Implementation of the Kernel k-means clustering algorithm for multiple dimensions (including as well one-dimensional data) in Python. The results are visualized in plots and measured with quality metrics (e.g. Silhouette Coefficient). The algorithm can be used as a framework.
 
 https://sites.google.com/site/dataclusteringalgorithms/kernel-k-means-clustering-algorithm
@@ -8,7 +10,7 @@ The related bachelor thesis can be found here: https://www.overleaf.com/read/shn
 
 ## Installation
 
-`pip install KKMeans-JO`
+`pip install python-kkmeans`
 
 The package can also be installed directly from this repository using `pip install git+ssh://git@git01lab.cs.univie.ac.at/osterj97/oster-bachelor-thesis.git`.
 
@@ -16,13 +18,17 @@ The package can also be installed directly from this repository using `pip insta
 
 ```
 from sklearn.datasets import make_blobs
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+
 from kkmeans import kkmeans
 
-n_clusters = 5
-X, _ = make_blobs(n_samples=100, n_features=5, centers=n_clusters)
-X_scaled = scaler.fit_transform(X)
+n_clusters = 3
+X, _ = make_blobs(n_samples=100, n_features=3, centers=n_clusters)
+X_scaled = StandardScaler().fit_transform(X)
 
 cluster_assignments = kkmeans(X, n_clusters=n_clusters)
+plt.scatter(X_scaled[:,0], X_scaled[:,1], c=cluster_assignments)
 ```
 
 ## Examples
